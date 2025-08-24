@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>陳醫師整形外科診所 - 專業美容整形手術</title>
-    <meta name="description" content="陳醫師整形外科診所提供專業的美容整形手術，包含雙眼皮、隆鼻、拉皮等項目。20年豐富經驗，值得信賴的醫療團隊。">
+    <title>心臟血管外科專家 - 高雄醫學大學附設醫院</title>
+    <meta name="description" content="高雄醫學大學附設醫院心臟血管外科主治醫師，專精冠狀動脈繞道手術、心臟瓣膜修復、主動脈手術等複雜心臟血管疾病治療。">
     <style>
         * {
             margin: 0;
@@ -27,13 +27,13 @@
 
         /* 導航列 */
         nav {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #c9302c 0%, #8b1a1a 100%);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
         }
 
         .nav-container {
@@ -58,6 +58,7 @@
             color: white;
             text-decoration: none;
             transition: opacity 0.3s;
+            font-weight: 500;
         }
 
         .nav-links a:hover {
@@ -66,9 +67,27 @@
 
         /* 首頁橫幅 */
         .hero {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 120px 0 80px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e9ecef" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)" /></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
@@ -78,41 +97,49 @@
             font-weight: 300;
         }
 
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #c9302c;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
         .hero p {
             font-size: 1.2rem;
-            color: #7f8c8d;
+            color: #6c757d;
             margin-bottom: 2rem;
-            max-width: 600px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .cta-button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #c9302c 0%, #8b1a1a 100%);
             color: white;
-            padding: 15px 30px;
+            padding: 15px 35px;
             border: none;
             border-radius: 50px;
             font-size: 1.1rem;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
+            font-weight: 600;
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(201, 48, 44, 0.3);
         }
 
         /* 區塊樣式 */
         section {
-            padding: 60px 0;
+            padding: 80px 0;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 3rem;
             color: #2c3e50;
             font-weight: 300;
@@ -126,67 +153,100 @@
         .doctor-card {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
             background: white;
-            padding: 3rem;
+            padding: 4rem;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
         }
 
         .doctor-image {
             width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 400px;
+            background: linear-gradient(135deg, #c9302c 0%, #8b1a1a 100%);
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 1.2rem;
+            text-align: center;
         }
 
         .doctor-info h3 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #2c3e50;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .doctor-title {
+            color: #c9302c;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
         }
 
         .credentials {
-            background: #e8f4fd;
-            padding: 1rem;
-            border-radius: 10px;
-            margin: 1rem 0;
+            background: #fff3f3;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #c9302c;
         }
 
-        /* 治療項目 */
-        .services-grid {
+        .credentials h4 {
+            color: #c9302c;
+            margin-bottom: 1rem;
+        }
+
+        .credentials ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .credentials li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .credentials li::before {
+            content: '•';
+            color: #c9302c;
+            position: absolute;
+            left: 0;
+        }
+
+        /* 專業領域 */
+        .specialties-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
-        .service-card {
+        .specialty-card {
             background: white;
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
+            border-top: 4px solid #c9302c;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        .specialty-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
-        .service-icon {
+        .specialty-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #c9302c 0%, #8b1a1a 100%);
             border-radius: 50%;
-            margin: 0 auto 1rem;
+            margin: 0 auto 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -194,67 +254,113 @@
             font-size: 2rem;
         }
 
-        /* 成功案例 */
+        /* 治療案例 */
         .cases {
             background: #f8f9fa;
         }
 
         .cases-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
 
         .case-card {
             background: white;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
         }
 
         .case-card:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
         .case-image {
             height: 200px;
-            background: linear-gradient(45deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
+            background: linear-gradient(45deg, #ff6b6b 0%, #c9302c 50%, #8b1a1a 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: bold;
+            font-size: 1.1rem;
         }
 
         .case-info {
-            padding: 1.5rem;
+            padding: 2rem;
+        }
+
+        .case-info h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* 醫學知識文章 */
+        .articles {
+            background: white;
+        }
+
+        .article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            border-left: 4px solid #c9302c;
+        }
+
+        .article h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .article-meta {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .article-tag {
+            background: #fff3f3;
+            color: #c9302c;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
         }
 
         /* 聯絡資訊 */
         .contact {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
         .contact-card {
             background: rgba(255,255,255,0.1);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 15px;
             text-align: center;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .contact-icon {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
 
@@ -265,15 +371,16 @@
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .doctor-card {
                 grid-template-columns: 1fr;
                 text-align: center;
+                padding: 2.5rem;
             }
 
-            .services-grid {
+            .specialties-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -290,26 +397,28 @@
             transform: translateY(0);
         }
 
-        /* 文章樣式 */
-        .article {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
+        /* 統計數字 */
+        .stats {
+            background: linear-gradient(135deg, #c9302c 0%, #8b1a1a 100%);
+            color: white;
+            padding: 60px 0;
         }
 
-        .article h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
         }
 
-        .article-meta {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -318,14 +427,14 @@
     <nav>
         <div class="container">
             <div class="nav-container">
-                <div class="logo">陳醫師整形外科</div>
+                <div class="logo">心臟血管外科</div>
                 <ul class="nav-links">
                     <li><a href="#home">首頁</a></li>
                     <li><a href="#about">關於醫師</a></li>
-                    <li><a href="#services">治療項目</a></li>
-                    <li><a href="#cases">成功案例</a></li>
-                    <li><a href="#articles">醫學知識</a></li>
-                    <li><a href="#contact">聯絡我們</a></li>
+                    <li><a href="#specialties">專業領域</a></li>
+                    <li><a href="#cases">治療成果</a></li>
+                    <li><a href="#articles">衛教知識</a></li>
+                    <li><a href="#contact">門診資訊</a></li>
                 </ul>
             </div>
         </div>
@@ -334,88 +443,141 @@
     <!-- 首頁橫幅 -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>專業醫療，美麗蜕變</h1>
-            <p>20年豐富經驗的整形外科專科醫師，為您提供安全、專業的美容整形服務。讓專業技術為您打造理想的美麗容顏。</p>
-            <a href="#contact" class="cta-button">立即預約諮詢</a>
+            <div class="hero-content">
+                <div class="hero-subtitle">高雄醫學大學附設醫院 • 高雄小港醫院</div>
+                <h1>心臟血管外科專科醫師</h1>
+                <p>專精於複雜心臟血管疾病治療，擁有豐富的臨床經驗與精湛的手術技巧。為患者提供最專業、最安全的心臟血管外科醫療服務，守護每一顆珍貴的心臟。</p>
+                <a href="#contact" class="cta-button">預約門診諮詢</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 統計數字 -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <h3>15+</h3>
+                    <p>年臨床經驗</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3>2000+</h3>
+                    <p>成功手術案例</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3>98%</h3>
+                    <p>患者滿意度</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3>24/7</h3>
+                    <p>急診醫療服務</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- 醫師介紹 -->
     <section id="about" class="doctor-intro">
         <div class="container">
-            <h2 class="section-title fade-in">關於陳醫師</h2>
+            <h2 class="section-title fade-in">醫師簡介</h2>
             <div class="doctor-card fade-in">
                 <div class="doctor-image">
-                    醫師專業照片
+                    醫師專業照片<br>
+                    <small>（請更換為實際照片）</small>
                 </div>
                 <div class="doctor-info">
-                    <h3>陳○○醫師</h3>
+                    <h3>○○○醫師</h3>
+                    <div class="doctor-title">心臟血管外科專科醫師</div>
+                    
                     <div class="credentials">
-                        <strong>專業資歷</strong><br>
-                        • 台灣整形外科專科醫師<br>
-                        • ○○醫學院醫學系畢業<br>
-                        • ○○醫院整形外科主治醫師<br>
-                        • 20年臨床經驗，手術案例超過5000例
+                        <h4>現職</h4>
+                        <ul>
+                            <li>高雄醫學大學附設醫院 心臟血管外科主治醫師</li>
+                            <li>高雄小港醫院 心臟血管外科主治醫師</li>
+                            <li>中華民國心臟學會會員</li>
+                            <li>台灣心臟血管外科學會專科醫師</li>
+                        </ul>
                     </div>
-                    <p>陳醫師專精於各類美容整形手術，秉持著「安全第一、自然美麗」的理念，為每位患者量身打造最適合的治療方案。豐富的臨床經驗和精湛的手術技巧，讓無數患者重拾自信美麗。</p>
+
+                    <div class="credentials">
+                        <h4>學經歷</h4>
+                        <ul>
+                            <li>高雄醫學大學醫學系畢業</li>
+                            <li>高雄醫學大學附設醫院外科部住院醫師</li>
+                            <li>心臟血管外科專科醫師訓練</li>
+                            <li>國外心臟移植中心進修</li>
+                        </ul>
+                    </div>
+
+                    <p>專精於各類心臟血管疾病的外科治療，包含冠狀動脈繞道手術、心臟瓣膜修復置換、主動脈疾病治療等。秉持著「精準醫療、用心守護」的理念，為每位患者提供最適切的治療方案。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 治療項目 -->
-    <section id="services">
+    <!-- 專業領域 -->
+    <section id="specialties">
         <div class="container">
-            <h2 class="section-title fade-in">專業治療項目</h2>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">👁</div>
-                    <h3>雙眼皮手術</h3>
-                    <p>自然無痕的雙眼皮成形術，包含縫合式與切開式，依據個人眼型設計最適合的術式。</p>
+            <h2 class="section-title fade-in">專業治療領域</h2>
+            <div class="specialties-grid">
+                <div class="specialty-card fade-in">
+                    <div class="specialty-icon">🫀</div>
+                    <h3>冠狀動脈繞道手術</h3>
+                    <p>CABG手術治療嚴重冠心病，包含傳統開胸及微創手術方式，恢復心肌血流供應。</p>
                 </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">👃</div>
-                    <h3>隆鼻整形</h3>
-                    <p>運用最新3D技術精準雕塑，打造自然立體的鼻型，提升整體面部比例和諧感。</p>
+                <div class="specialty-card fade-in">
+                    <div class="specialty-icon">🔧</div>
+                    <h3>心臟瓣膜手術</h3>
+                    <p>二尖瓣、主動脈瓣修復或置換手術，採用最新微創技術，降低手術風險。</p>
                 </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">💋</div>
-                    <h3>面部拉提</h3>
-                    <p>非侵入性拉提技術，有效改善鬆弛下垂問題，重現年輕緊緻的肌膚狀態。</p>
+                <div class="specialty-card fade-in">
+                    <div class="specialty-icon">🩺</div>
+                    <h3>主動脈疾病治療</h3>
+                    <p>主動脈瘤、主動脈剝離等急重症治療，24小時待命提供緊急醫療服務。</p>
                 </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">✨</div>
-                    <h3>微整形</h3>
-                    <p>玻尿酸、肉毒桿菌等微創治療，快速改善細紋、豐唇、輪廓雕塑。</p>
+                <div class="specialty-card fade-in">
+                    <div class="specialty-icon">⚡</div>
+                    <h3>微創心臟手術</h3>
+                    <p>MICS技術進行心臟手術，傷口小、恢復快，降低患者痛苦與住院時間。</p>
+                </div>
+                <div class="specialty-card fade-in">
+                    <div class="specialty-icon">🔄</div>
+                    <h3>心臟移植</h3>
+                    <p>終末期心臟病患者的最後希望，完整的移植團隊提供全方位照護。</p>
+                </div>
+                <div class="specialty-card fade-in">
+                    <div class="specialty-icon">🫁</div>
+                    <h3>體外循環手術</h3>
+                    <p>運用人工心肺機進行複雜心臟手術，確保手術過程中患者生命安全。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 成功案例 -->
+    <!-- 治療成果 -->
     <section id="cases" class="cases">
         <div class="container">
-            <h2 class="section-title fade-in">成功案例分享</h2>
+            <h2 class="section-title fade-in">治療成果分享</h2>
             <div class="cases-grid">
                 <div class="case-card fade-in">
-                    <div class="case-image">雙眼皮手術案例</div>
+                    <div class="case-image">冠狀動脈繞道手術</div>
                     <div class="case-info">
-                        <h4>自然雙眼皮成形</h4>
-                        <p>25歲女性，採用縫合式雙眼皮手術，術後恢復快速，效果自然。</p>
+                        <h4>三條血管繞道手術</h4>
+                        <p>65歲男性患者，嚴重三條冠狀動脈狹窄，成功進行CABG手術，術後恢復良好，重返正常生活。</p>
                     </div>
                 </div>
                 <div class="case-card fade-in">
-                    <div class="case-image">隆鼻手術案例</div>
+                    <div class="case-image">主動脈瓣膜置換</div>
                     <div class="case-info">
-                        <h4>3D立體隆鼻</h4>
-                        <p>30歲女性，運用卡麥拉隆鼻技術，打造立體自然的鼻型。</p>
+                        <h4>微創瓣膜置換術</h4>
+                        <p>72歲女性患者，主動脈瓣嚴重狹窄，採用微創手術置換生物瓣膜，手術成功，生活品質顯著改善。</p>
                     </div>
                 </div>
                 <div class="case-card fade-in">
-                    <div class="case-image">拉提手術案例</div>
+                    <div class="case-image">主動脈剝離急救</div>
                     <div class="case-info">
-                        <h4>無創面部拉提</h4>
-                        <p>45歲女性，音波拉提治療，明顯改善鬆弛問題。</p>
+                        <h4>急性主動脈剝離搶救</h4>
+                        <p>58歲男性急性A型主動脈剝離，緊急進行主動脈根部置換手術，成功挽救生命。</p>
                     </div>
                 </div>
             </div>
@@ -423,29 +585,38 @@
     </section>
 
     <!-- 醫學知識文章 -->
-    <section id="articles">
+    <section id="articles" class="articles">
         <div class="container">
-            <h2 class="section-title fade-in">醫學知識分享</h2>
+            <h2 class="section-title fade-in">心血管健康衛教</h2>
             
             <div class="article fade-in">
-                <h3>雙眼皮手術前必知的5個重點</h3>
-                <div class="article-meta">發表日期：2025年8月20日</div>
-                <p>雙眼皮手術是目前最受歡迎的美容整形項目之一。在決定進行手術前，患者應該了解手術方式的選擇、恢復期的注意事項，以及如何選擇適合的醫師...</p>
-                <a href="#" style="color: #667eea;">閱讀全文 →</a>
+                <h3>認識冠心病：症狀、風險因子與預防</h3>
+                <div class="article-meta">
+                    <span>發表日期：2025年8月20日</span>
+                    <span class="article-tag">衛教知識</span>
+                </div>
+                <p>冠心病是心臟血管疾病中最常見的類型，了解其症狀和風險因子對早期發現和預防至關重要。胸痛、呼吸困難、疲勞感都可能是警訊...</p>
+                <a href="#" style="color: #c9302c; font-weight: 600;">閱讀全文 →</a>
             </div>
 
             <div class="article fade-in">
-                <h3>隆鼻手術材質比較：矽膠vs卡麥拉</h3>
-                <div class="article-meta">發表日期：2025年8月15日</div>
-                <p>選擇合適的隆鼻材質是手術成功的關鍵因素。本文將詳細比較矽膠和卡麥拉兩種主要材質的特性、優缺點，以及適用對象...</p>
-                <a href="#" style="color: #667eea;">閱讀全文 →</a>
+                <h3>心臟手術前後注意事項完整指南</h3>
+                <div class="article-meta">
+                    <span>發表日期：2025年8月15日</span>
+                    <span class="article-tag">手術指南</span>
+                </div>
+                <p>心臟手術是重大醫療決定，充分的術前準備和術後護理是成功的關鍵。從檢查準備到恢復期的生活調整，完整的指南幫助患者安心面對...</p>
+                <a href="#" style="color: #c9302c; font-weight: 600;">閱讀全文 →</a>
             </div>
 
             <div class="article fade-in">
-                <h3>術後護理指南：如何加速恢復</h3>
-                <div class="article-meta">發表日期：2025年8月10日</div>
-                <p>正確的術後護理是確保手術效果和安全的重要環節。從傷口照護、飲食注意事項到運動限制，完整的護理指南讓您安心恢復...</p>
-                <a href="#" style="color: #667eea;">閱讀全文 →</a>
+                <h3>微創心臟手術的優勢與適用對象</h3>
+                <div class="article-meta">
+                    <span>發表日期：2025年8月10日</span>
+                    <span class="article-tag">手術技術</span>
+                </div>
+                <p>微創心臟手術 (MICS) 是現代心臟外科的重要發展，透過小切口進行複雜手術，大幅降低患者創傷和恢復時間...</p>
+                <a href="#" style="color: #c9302c; font-weight: 600;">閱讀全文 →</a>
             </div>
         </div>
     </section>
@@ -453,27 +624,27 @@
     <!-- 聯絡資訊 -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title" style="color: white;">聯絡我們</h2>
+            <h2 class="section-title" style="color: white;">門診資訊</h2>
             <div class="contact-grid">
                 <div class="contact-card fade-in">
-                    <div class="contact-icon">📍</div>
-                    <h4>診所地址</h4>
-                    <p>台北市信義區○○路123號<br>捷運○○站1號出口</p>
+                    <div class="contact-icon">🏥</div>
+                    <h4>高雄醫學大學附設醫院</h4>
+                    <p>高雄市三民區自由一路100號<br>心臟血管外科門診</p>
+                </div>
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">🏥</div>
+                    <h4>高雄小港醫院</h4>
+                    <p>高雄市小港區山明路482號<br>心臟血管外科門診</p>
                 </div>
                 <div class="contact-card fade-in">
                     <div class="contact-icon">📞</div>
-                    <h4>預約專線</h4>
-                    <p>02-1234-5678<br>週一至週六 9:00-18:00</p>
-                </div>
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">✉️</div>
-                    <h4>電子信箱</h4>
-                    <p>info@drchen-clinic.com<br>24小時內回覆諮詢</p>
+                    <h4>預約掛號</h4>
+                    <p>高醫：07-312-1101<br>小港：07-803-6783<br>或使用線上掛號系統</p>
                 </div>
                 <div class="contact-card fade-in">
                     <div class="contact-icon">🕒</div>
                     <h4>門診時間</h4>
-                    <p>週一至週五 9:00-12:00, 14:00-18:00<br>週六 9:00-12:00</p>
+                    <p>請參考醫院官網最新門診表<br>急診24小時提供服務</p>
                 </div>
             </div>
         </div>
@@ -482,7 +653,8 @@
     <!-- 版權資訊 -->
     <footer style="background: #2c3e50; color: white; text-align: center; padding: 2rem 0;">
         <div class="container">
-            <p>&copy; 2025 陳醫師整形外科診所 | 專業醫療，值得信賴</p>
+            <p>&copy; 2025 心臟血管外科專科醫師 | 高雄醫學大學附設醫院 • 高雄小港醫院</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.7;">專業醫療，守護您的心臟健康</p>
         </div>
     </footer>
 
@@ -518,19 +690,37 @@
         window.addEventListener('scroll', checkScroll);
         window.addEventListener('load', checkScroll);
 
-        // 動態載入更多文章功能
-        function loadMoreArticles() {
-            // 這裡可以連接到您的內容管理系統
-            console.log('載入更多醫學知識文章...');
+        // 數字動畫效果
+        function animateNumbers() {
+            const statItems = document.querySelectorAll('.stat-item h3');
+            statItems.forEach(item => {
+                const target = parseInt(item.textContent);
+                let current = 0;
+                const increment = target / 30;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    item.textContent = Math.floor(current) + (item.textContent.includes('+') ? '+' : '') + (item.textContent.includes('%') ? '%' : '');
+                }, 50);
+            });
         }
 
-        // 簡單的內容更新功能示範
-        function updateContent(section, newContent) {
-            const element = document.querySelector(section);
-            if (element) {
-                element.innerHTML = newContent;
+        // 當統計區塊進入視野時觸發動畫
+        let statsAnimated = false;
+        window.addEventListener('scroll', () => {
+            const statsSection = document.querySelector('.stats');
+            if (statsSection && !statsAnimated) {
+                const rect = statsSection.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    animateNumbers();
+                    statsAnimated = true;
+                }
             }
-        }
+        });
     </script>
 </body>
 </html>
