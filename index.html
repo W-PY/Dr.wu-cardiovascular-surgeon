@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳醫師整形外科診所 - 專業美容整形手術</title>
+    <meta name="description" content="陳醫師整形外科診所提供專業的美容整形手術，包含雙眼皮、隆鼻、拉皮等項目。20年豐富經驗，值得信賴的醫療團隊。">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 導航列 */
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* 首頁橫幅 */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* 區塊樣式 */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            font-weight: 300;
+        }
+
+        /* 醫師介紹 */
+        .doctor-intro {
+            background: #f8f9fa;
+        }
+
+        .doctor-card {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .doctor-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .doctor-info h3 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .credentials {
+            background: #e8f4fd;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        /* 治療項目 */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* 成功案例 */
+        .cases {
+            background: #f8f9fa;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .case-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .case-card:hover {
+            transform: scale(1.02);
+        }
+
+        .case-image {
+            height: 200px;
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .case-info {
+            padding: 1.5rem;
+        }
+
+        /* 聯絡資訊 */
+        .contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .doctor-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 載入動畫 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 文章樣式 */
+        .article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .article h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航列 -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">陳醫師整形外科</div>
+                <ul class="nav-links">
+                    <li><a href="#home">首頁</a></li>
+                    <li><a href="#about">關於醫師</a></li>
+                    <li><a href="#services">治療項目</a></li>
+                    <li><a href="#cases">成功案例</a></li>
+                    <li><a href="#articles">醫學知識</a></li>
+                    <li><a href="#contact">聯絡我們</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首頁橫幅 -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>專業醫療，美麗蜕變</h1>
+            <p>20年豐富經驗的整形外科專科醫師，為您提供安全、專業的美容整形服務。讓專業技術為您打造理想的美麗容顏。</p>
+            <a href="#contact" class="cta-button">立即預約諮詢</a>
+        </div>
+    </section>
+
+    <!-- 醫師介紹 -->
+    <section id="about" class="doctor-intro">
+        <div class="container">
+            <h2 class="section-title fade-in">關於陳醫師</h2>
+            <div class="doctor-card fade-in">
+                <div class="doctor-image">
+                    醫師專業照片
+                </div>
+                <div class="doctor-info">
+                    <h3>陳○○醫師</h3>
+                    <div class="credentials">
+                        <strong>專業資歷</strong><br>
+                        • 台灣整形外科專科醫師<br>
+                        • ○○醫學院醫學系畢業<br>
+                        • ○○醫院整形外科主治醫師<br>
+                        • 20年臨床經驗，手術案例超過5000例
+                    </div>
+                    <p>陳醫師專精於各類美容整形手術，秉持著「安全第一、自然美麗」的理念，為每位患者量身打造最適合的治療方案。豐富的臨床經驗和精湛的手術技巧，讓無數患者重拾自信美麗。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 治療項目 -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title fade-in">專業治療項目</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">👁</div>
+                    <h3>雙眼皮手術</h3>
+                    <p>自然無痕的雙眼皮成形術，包含縫合式與切開式，依據個人眼型設計最適合的術式。</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">👃</div>
+                    <h3>隆鼻整形</h3>
+                    <p>運用最新3D技術精準雕塑，打造自然立體的鼻型，提升整體面部比例和諧感。</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">💋</div>
+                    <h3>面部拉提</h3>
+                    <p>非侵入性拉提技術，有效改善鬆弛下垂問題，重現年輕緊緻的肌膚狀態。</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">✨</div>
+                    <h3>微整形</h3>
+                    <p>玻尿酸、肉毒桿菌等微創治療，快速改善細紋、豐唇、輪廓雕塑。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成功案例 -->
+    <section id="cases" class="cases">
+        <div class="container">
+            <h2 class="section-title fade-in">成功案例分享</h2>
+            <div class="cases-grid">
+                <div class="case-card fade-in">
+                    <div class="case-image">雙眼皮手術案例</div>
+                    <div class="case-info">
+                        <h4>自然雙眼皮成形</h4>
+                        <p>25歲女性，採用縫合式雙眼皮手術，術後恢復快速，效果自然。</p>
+                    </div>
+                </div>
+                <div class="case-card fade-in">
+                    <div class="case-image">隆鼻手術案例</div>
+                    <div class="case-info">
+                        <h4>3D立體隆鼻</h4>
+                        <p>30歲女性，運用卡麥拉隆鼻技術，打造立體自然的鼻型。</p>
+                    </div>
+                </div>
+                <div class="case-card fade-in">
+                    <div class="case-image">拉提手術案例</div>
+                    <div class="case-info">
+                        <h4>無創面部拉提</h4>
+                        <p>45歲女性，音波拉提治療，明顯改善鬆弛問題。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 醫學知識文章 -->
+    <section id="articles">
+        <div class="container">
+            <h2 class="section-title fade-in">醫學知識分享</h2>
+            
+            <div class="article fade-in">
+                <h3>雙眼皮手術前必知的5個重點</h3>
+                <div class="article-meta">發表日期：2025年8月20日</div>
+                <p>雙眼皮手術是目前最受歡迎的美容整形項目之一。在決定進行手術前，患者應該了解手術方式的選擇、恢復期的注意事項，以及如何選擇適合的醫師...</p>
+                <a href="#" style="color: #667eea;">閱讀全文 →</a>
+            </div>
+
+            <div class="article fade-in">
+                <h3>隆鼻手術材質比較：矽膠vs卡麥拉</h3>
+                <div class="article-meta">發表日期：2025年8月15日</div>
+                <p>選擇合適的隆鼻材質是手術成功的關鍵因素。本文將詳細比較矽膠和卡麥拉兩種主要材質的特性、優缺點，以及適用對象...</p>
+                <a href="#" style="color: #667eea;">閱讀全文 →</a>
+            </div>
+
+            <div class="article fade-in">
+                <h3>術後護理指南：如何加速恢復</h3>
+                <div class="article-meta">發表日期：2025年8月10日</div>
+                <p>正確的術後護理是確保手術效果和安全的重要環節。從傷口照護、飲食注意事項到運動限制，完整的護理指南讓您安心恢復...</p>
+                <a href="#" style="color: #667eea;">閱讀全文 →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯絡資訊 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">聯絡我們</h2>
+            <div class="contact-grid">
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">📍</div>
+                    <h4>診所地址</h4>
+                    <p>台北市信義區○○路123號<br>捷運○○站1號出口</p>
+                </div>
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">📞</div>
+                    <h4>預約專線</h4>
+                    <p>02-1234-5678<br>週一至週六 9:00-18:00</p>
+                </div>
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">✉️</div>
+                    <h4>電子信箱</h4>
+                    <p>info@drchen-clinic.com<br>24小時內回覆諮詢</p>
+                </div>
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">🕒</div>
+                    <h4>門診時間</h4>
+                    <p>週一至週五 9:00-12:00, 14:00-18:00<br>週六 9:00-12:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 版權資訊 -->
+    <footer style="background: #2c3e50; color: white; text-align: center; padding: 2rem 0;">
+        <div class="container">
+            <p>&copy; 2025 陳醫師整形外科診所 | 專業醫療，值得信賴</p>
+        </div>
+    </footer>
+
+    <script>
+        // 滾動動畫效果
+        function checkScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 事件監聽器
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+
+        // 動態載入更多文章功能
+        function loadMoreArticles() {
+            // 這裡可以連接到您的內容管理系統
+            console.log('載入更多醫學知識文章...');
+        }
+
+        // 簡單的內容更新功能示範
+        function updateContent(section, newContent) {
+            const element = document.querySelector(section);
+            if (element) {
+                element.innerHTML = newContent;
+            }
+        }
+    </script>
+</body>
+</html>
