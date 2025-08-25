@@ -299,6 +299,63 @@
             margin-bottom: 1rem;
         }
 
+        /* 媒體報導 */
+        .media-reports {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .media-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-left: 4px solid #c9302c;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .media-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .media-icon {
+            font-size: 2.5rem;
+            min-width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .media-content h4 {
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
+
+        .media-source {
+            color: #c9302c;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .media-description {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+
         /* 醫學知識文章 */
         .articles {
             background: white;
@@ -397,6 +454,85 @@
             transform: translateY(0);
         }
 
+        /* 快速選單 */
+        .quick-menu {
+            background: #f8f9fa;
+            padding: 40px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .menu-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .menu-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 1.5rem;
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .menu-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border-color: #c9302c;
+        }
+
+        .menu-btn.primary-btn {
+            background: linear-gradient(135deg, #ff8c00 0%, #ff6600 100%);
+            color: white;
+            border-color: #ff6600;
+            animation: pulse 2s infinite;
+        }
+
+        .menu-btn.primary-btn:hover {
+            background: linear-gradient(135deg, #ff6600 0%, #ff4400 100%);
+            border-color: #ff4400;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .menu-icon {
+            font-size: 1.5rem;
+            min-width: 32px;
+            text-align: center;
+        }
+
+        .menu-btn span {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .menu-buttons {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .menu-btn {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .menu-icon {
+                font-size: 1.3rem;
+            }
+        }
+
         /* 統計數字 */
         .stats {
             background: linear-gradient(135deg, #c9302c 0%, #8b1a1a 100%);
@@ -433,6 +569,7 @@
                     <li><a href="#about">關於醫師</a></li>
                     <li><a href="#specialties">專業領域</a></li>
                     <li><a href="#cases">治療成果</a></li>
+                    <li><a href="#media">媒體報導</a></li>
                     <li><a href="#articles">衛教知識</a></li>
                     <li><a href="#contact">門診資訊</a></li>
                 </ul>
@@ -452,12 +589,44 @@
         </div>
     </section>
 
+    <!-- 快速選單 -->
+    <section class="quick-menu">
+        <div class="container">
+            <div class="menu-buttons">
+                <a href="#contact" class="menu-btn primary-btn">
+                    <div class="menu-icon">📞</div>
+                    <span>我要掛號</span>
+                </a>
+                <a href="#about" class="menu-btn">
+                    <div class="menu-icon">👨‍⚕️</div>
+                    <span>醫師簡介</span>
+                </a>
+                <a href="#specialties" class="menu-btn">
+                    <div class="menu-icon">🫀</div>
+                    <span>專業治療</span>
+                </a>
+                <a href="#cases" class="menu-btn">
+                    <div class="menu-icon">📋</div>
+                    <span>成功案例</span>
+                </a>
+                <a href="#media" class="menu-btn">
+                    <div class="menu-icon">📺</div>
+                    <span>媒體報導</span>
+                </a>
+                <a href="#articles" class="menu-btn">
+                    <div class="menu-icon">📚</div>
+                    <span>衛教知識</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- 統計數字 -->
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item fade-in">
-                    <h3>10+</h3>
+                    <h3>5+</h3>
                     <p>年臨床經驗</p>
                 </div>
                 <div class="stat-item fade-in">
@@ -469,8 +638,12 @@
                     <p>心臟主動脈手術案例</p>
                 </div>
                 <div class="stat-item fade-in">
-                    <h3>24hr</h3>
-                    <p>不間斷醫療服務</p>
+                    <h3>50+</h3>
+                    <p>急救葉克膜置放</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3>20+</h3>
+                    <p>靜脈曲張微創手術</p>
                 </div>
             </div>
         </div>
@@ -485,30 +658,38 @@
                     <img src="images/doctor-photo.jpg" alt="吳柏俞醫師專業照片" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
                 </div>
                 <div class="doctor-info">
-                    <h3>○○○醫師</h3>
+                    <h3>吳柏俞醫師</h3>
                     <div class="doctor-title">心臟血管外科專科醫師</div>
                     
                     <div class="credentials">
                         <h4>現職</h4>
                         <ul>
-                            <li>高雄醫學大學附設醫院 心臟血管外科主治醫師</li>
+                            <li>高雄醫學大學附設中和紀念醫院 心臟血管外科主治醫師</li>
                             <li>高雄小港醫院 心臟血管外科主治醫師</li>
-                            <li>中華民國心臟學會會員</li>
-                            <li>台灣心臟血管外科學會專科醫師</li>
+                            <li>外科專科醫師</li>
+                            <li>台灣胸腔暨心臟血管外科醫學會專科醫師</li>
                         </ul>
                     </div>
 
                     <div class="credentials">
                         <h4>學經歷</h4>
                         <ul>
-                            <li>高雄醫學大學醫學系畢業</li>
-                            <li>高雄醫學大學附設醫院外科部住院醫師</li>
-                            <li>心臟血管外科專科醫師訓練</li>
-                            <li>國外心臟移植中心進修</li>
+                            <li>高雄醫學院醫學系學士</li>
+                            <li>醫學研究所碩士研究生</li>
+                            <li>心臟血管外科主治醫師</li>
+                            <li>台北振興醫院心臟外科訓練醫師</li>
+                            <li>日本東京慶應大學附設醫院心臟外科訓練醫師</li>
                         </ul>
                     </div>
 
                     <p>專精於各類心臟血管疾病的外科治療，包含冠狀動脈繞道手術、心臟瓣膜修復置換、主動脈疾病治療等。秉持著「精準醫療、用心守護」的理念，為每位患者提供最適切的治療方案。</p>
+                    
+                    <a href="https://www.kmuh.org.tw/Web/WebRegistration/DocIntro/DocDetail?lang=tw&doctorID=1070607&deptDesc=%E5%BF%83%E8%87%9F%E8%A1%80%E7%AE%A1%E5%A4%96%E7%A7%91&dCode=0220" target="_blank" 
+                       style="display: inline-block; margin-top: 1.5rem; background: linear-gradient(135deg, #c9302c 0%, #8b1a1a 100%); 
+                              color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; 
+                              font-weight: 600; transition: all 0.3s; box-shadow: 0 4px 15px rgba(201, 48, 44, 0.3);">
+                        🏥 查看高醫官方簡介
+                    </a>
                 </div>
             </div>
         </div>
@@ -520,34 +701,34 @@
             <h2 class="section-title fade-in">專業治療領域</h2>
             <div class="specialties-grid">
                 <div class="specialty-card fade-in">
+                    <div class="specialty-icon">🩸</div>
+                    <h3>洗腎瘻管手術</h3>
+                    <p>血液透析瘻管手術、瘻管介入手術、氣球擴張術及支架置放手術，專業處理末期腎病患者血管通路問題。</p>
+                </div>
+                <div class="specialty-card fade-in">
                     <div class="specialty-icon">🫀</div>
                     <h3>冠狀動脈繞道手術</h3>
-                    <p>CABG手術治療嚴重冠心病，包含傳統開胸及微創手術方式，恢復心肌血流供應。</p>
+                    <p>CABG手術治療嚴重冠心病，採用傳統開胸手術方式，恢復心肌血流供應。</p>
                 </div>
                 <div class="specialty-card fade-in">
                     <div class="specialty-icon">🔧</div>
                     <h3>心臟瓣膜手術</h3>
-                    <p>二尖瓣、主動脈瓣修復或置換手術，採用最新微創技術，降低手術風險。</p>
+                    <p>二尖瓣、主動脈瓣修復或置換手術，可評估微創手術，降低手術風險。</p>
                 </div>
                 <div class="specialty-card fade-in">
                     <div class="specialty-icon">🩺</div>
                     <h3>主動脈疾病治療</h3>
-                    <p>主動脈瘤、主動脈剝離等急重症治療，24小時待命提供緊急醫療服務。</p>
+                    <p>主動脈瘤、主動脈剝離、主動脈修補術、微創主動脈手術等急重症治療。</p>
                 </div>
                 <div class="specialty-card fade-in">
-                    <div class="specialty-icon">⚡</div>
-                    <h3>微創心臟手術</h3>
-                    <p>MICS技術進行心臟手術，傷口小、恢復快，降低患者痛苦與住院時間。</p>
+                    <div class="specialty-icon">🦵</div>
+                    <h3>周邊血管疾病</h3>
+                    <p>氣球擴張術及支架置放手術，治療周邊動脈阻塞和血管狹窄問題。</p>
                 </div>
                 <div class="specialty-card fade-in">
-                    <div class="specialty-icon">🔄</div>
-                    <h3>心臟移植</h3>
-                    <p>終末期心臟病患者的最後希望，完整的移植團隊提供全方位照護。</p>
-                </div>
-                <div class="specialty-card fade-in">
-                    <div class="specialty-icon">🫁</div>
-                    <h3>體外循環手術</h3>
-                    <p>運用人工心肺機進行複雜心臟手術，確保手術過程中患者生命安全。</p>
+                    <div class="specialty-icon">💉</div>
+                    <h3>靜脈疾病治療</h3>
+                    <p>靜脈曲張微創手術 - 雷射、微波、硬化劑，專業處理各種靜脈病變，恢復血管健康。</p>
                 </div>
             </div>
         </div>
@@ -577,6 +758,47 @@
                     <div class="case-info">
                         <h4>急性主動脈剝離搶救</h4>
                         <p>58歲男性急性A型主動脈剝離，緊急進行主動脈根部置換手術，成功挽救生命。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 媒體報導 -->
+    <section id="media" class="media-reports">
+        <div class="container">
+            <h2 class="section-title fade-in">媒體報導</h2>
+            <div class="media-grid">
+                <div class="media-card fade-in">
+                    <div class="media-icon">🫀</div>
+                    <div class="media-content">
+                        <h4>高醫兄弟檔吳柏宣、吳柏俞 換心換肝有他們</h4>
+                        <p class="media-source">自由時報健康網報導</p>
+                        <p class="media-description">高醫兄弟檔醫師攜手合作多重器官移植手術，兄弟檔醫師一個參與換心、一個投入換肝，手足情深，彼此相助，共同搶救生命。</p>
+                        <a href="https://health.ltn.com.tw/article/breakingnews/3795741" target="_blank" 
+                           style="display: inline-block; margin-top: 1rem; color: #c9302c; text-decoration: none; font-weight: 600;">
+                            📰 閱讀完整報導 →
+                        </a>
+                    </div>
+                </div>
+                <div class="media-card fade-in">
+                    <div class="media-icon">🩺</div>
+                    <div class="media-content">
+                        <h4>51歲男心肌炎釀心臟衰竭 葉克膜救命</h4>
+                        <p class="media-source">自由時報報導</p>
+                        <p class="media-description">心臟外科醫師吳柏俞與心臟內科醫師劉宜學攜手合作，緊急使用葉克膜輔助病人維持生命徵象，成功搶救51歲心肌炎患者。</p>
+                        <a href="https://news.ltn.com.tw/news/Kaohsiung/paper/1629067" target="_blank" 
+                           style="display: inline-block; margin-top: 1rem; color: #c9302c; text-decoration: none; font-weight: 600;">
+                            📰 閱讀完整報導 →
+                        </a>
+                    </div>
+                </div>
+                <div class="media-card fade-in">
+                    <div class="media-icon">🎥</div>
+                    <div class="media-content">
+                        <h4>心臟血管外科專業報導</h4>
+                        <p class="media-source">醫療專題報導</p>
+                        <p class="media-description">深度介紹心臟血管外科治療技術與成果，提升民眾對心血管疾病的認知與重視。</p>
                     </div>
                 </div>
             </div>
@@ -628,22 +850,41 @@
                 <div class="contact-card fade-in">
                     <div class="contact-icon">🏥</div>
                     <h4>高雄醫學大學附設醫院</h4>
-                    <p>高雄市三民區自由一路100號<br>心臟血管外科門診</p>
+                    <p>高雄市三民區自由一路100號<br>
+                    <strong>📞 預約掛號：07-312-1101</strong><br>
+                    禮拜一下午 心臟外科2診<br>
+                    禮拜四早上 心臟外科2診</p>
+                    <div style="background: rgba(255,255,255,0.95); padding: 1rem; border-radius: 8px; margin: 1rem 0; font-size: 0.9rem; border-left: 3px solid #c9302c; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <strong style="color: #2c3e50;">📋 掛號說明：</strong><br>
+                        <span style="color: #2c3e50;">請尋找「<strong style="color: #c9302c;">心臟血管外科２診 (0222)</strong>」<br>
+                        地點：<strong style="color: #c9302c;">啟川大樓(E棟)一樓</strong><br>
+                        (心臟血管醫學中心)<br>
+                        禮拜一下午、禮拜四早上 → 吳柏俞醫師</span>
+                    </div>
+                    <a href="https://www.kmuh.org.tw/Web/WebRegistration/Registration/RegSchedule?virtualCode=HD02&deptDesc=%E5%BF%83%E8%87%9F%E8%A1%80%E7%AE%A1%E5%A4%96%E7%A7%91&JsonLoc=%5B%220220%22%5D&lang=tw" target="_blank" 
+                       style="display: inline-block; margin-top: 1rem; background: linear-gradient(135deg, #c9302c 0%, #8b1a1a 100%); 
+                              color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; 
+                              font-weight: 600; transition: all 0.3s; box-shadow: 0 4px 15px rgba(201, 48, 44, 0.3);">
+                        🖥️ 線上預約掛號
+                    </a>
                 </div>
                 <div class="contact-card fade-in">
                     <div class="contact-icon">🏥</div>
                     <h4>高雄小港醫院</h4>
-                    <p>高雄市小港區山明路482號<br>心臟血管外科門診</p>
+                    <p>高雄市小港區山明路482號<br>
+                    <strong>📞 預約掛號：07-803-6783</strong><br>
+                    禮拜一早上 心臟外科</p>
+                    <a href="https://www.kmsh.org.tw/web/WebRegistration/Registration/RegSchedule?virtualCode=KD33&deptDesc=%E5%BF%83%E8%87%9F%E8%A1%80%E7%AE%A1%E5%A4%96%E7%A7%91&JsonLoc=%5Bnull%5D&lang=tw" target="_blank" 
+                       style="display: inline-block; margin-top: 1rem; background: linear-gradient(135deg, #c9302c 0%, #8b1a1a 100%); 
+                              color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; 
+                              font-weight: 600; transition: all 0.3s; box-shadow: 0 4px 15px rgba(201, 48, 44, 0.3);">
+                        🖥️ 線上預約掛號
+                    </a>
                 </div>
                 <div class="contact-card fade-in">
-                    <div class="contact-icon">📞</div>
-                    <h4>預約掛號</h4>
-                    <p>高醫：07-312-1101<br>小港：07-803-6783<br>或使用線上掛號系統</p>
-                </div>
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">🕒</div>
-                    <h4>門診時間</h4>
-                    <p>請參考醫院官網最新門診表<br>急診24小時提供服務</p>
+                    <div class="contact-icon">⚡</div>
+                    <h4>急診服務</h4>
+                    <p>心臟血管急症<br>24小時緊急處置<br>葉克膜急救支援</p>
                 </div>
             </div>
         </div>
